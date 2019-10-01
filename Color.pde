@@ -22,14 +22,62 @@ String[] words = {"red", "orange", "yellow", "green", "blue"};
 color[] colors = {red, orange, yellow, green, blue};
 PFont font;
 int bg;
-
-
+ArrayList<PImage> gif = new ArrayList<PImage>();
+int count=0;
+int n;
+boolean change;
 
 void setup() {
   size(800, 600);
   textAlign(CENTER, CENTER);
   font = createFont("Comic Sans MS", 30);
   bg=-600;
+  while(count<10)
+  { 
+    if(count%3==1){
+      PImage p =loadImage("frame_00"+count+"_delay-0.06s.gif");
+      p.resize(width,height);
+      gif.add(p);
+      count++;
+    }
+    else{
+      PImage p =loadImage("frame_00"+count+"_delay-0.07s.gif");
+      p.resize(width,height);
+      gif.add(p);
+      count++;
+    }
+  }
+  while(count>=10&&count<100)
+  {
+    if(count%3==1){
+      PImage p =loadImage("frame_0"+count+"_delay-0.06s.gif");
+      p.resize(width,height);
+      gif.add(p);
+      count++;
+    }
+    else{
+      PImage p =loadImage("frame_0"+count+"_delay-0.07s.gif");
+      p.resize(width,height);
+      gif.add(p);
+      count++;
+  }
+  }
+  while(count>=100&&count<226)
+  {
+    if(count%3==1){
+      PImage p =loadImage("frame_"+count+"_delay-0.06s.gif");
+      p.resize(width,height);
+      gif.add(p);
+      count++;
+    }
+    else{
+      PImage p =loadImage("frame_"+count+"_delay-0.07s.gif");
+      p.resize(width,height);
+      gif.add(p);
+      count++;
+    }
+  }
+  
 }
 void draw() {
   if (mode==intro) {
